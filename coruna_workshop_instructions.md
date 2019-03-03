@@ -250,8 +250,8 @@ In the last Notice that the scale of the map changes alot, the next example, wil
                max(bounds_width(  @atlas_geometry ),bounds_height( @atlas_geometry)) / @scale * 304.8 <= 840
    THEN 'A1'
    ELSE 'A0'
-  END
-  ```
+   END
+   ```
 
 ## Exercise 6 - Citizenship in Europe (map iterator)
 
