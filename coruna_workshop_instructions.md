@@ -253,4 +253,46 @@ In the last Notice that the scale of the map changes alot, the next example, wil
   END
   ```
 
-## Exercise 6 -
+## Exercise 6 - Citizenship in Europe (map iterator)
+
+Until now, we mostly used atlas to cycle the geometries of a layer, but we also
+used non-spatial attributes of the coverage layer in the layout and its items.
+
+In the next exercises, we will see atlas examples where the coverage layer is
+not even spatial.
+
+1. Open the EU_Citizanship.qgs project files
+2. Explain the data (Each layer represent the citizanship of population in europe,
+   and it's percentage). Show a few layer.
+3. Open the Map of Europe layout. The objective is to create a map for each
+   citizenship.
+4. As we have seen before, it's possible to save map presets to store different
+   layers and styles combinations. Therefore, we can create one preset for each,
+   citizenship origin.
+5. Disable all layers except for `Nationals` and `TM_WORLD_BORDERS-0.3`
+6. Create a preset using the name `Nationals` (use a nice name as we plan to
+   used it)
+7. Repeat the same process for all the layers, you should end up with 8 presets.
+8. We now need to create a coverage layer to cycle these presets. Create a scratch
+   layer without geometry called `citizenship_presets`.
+9. Open the layer attribute table and add a column called `preset_name`
+10. Fill the recently created layer with the names of the presets. And Save.
+11. At this point you may want to make the scratch layer permanent.
+12. Go back to the layout. In the atlas separator, use as coverage layer the `citizenship_presets`, for page name use the `preset_name`
+13. Now, don't try to control the map extent by the atlas feature, as the coverage
+layer does not even has a geometry, instead, lets control how it looks.
+Select the map item, and in the properties tab, set the **Follow map them** to
+use the `preset_name` field.
+14. Enable the atlas preview, and confirm that each map shows a different preset.
+15. Change the map title to include the preset name toolbar
+16. Select the legend item and filter it to show only visible layers
+17. cycle in the preview and see how each map it done
+18. Fix the legend to filter the visible layers
+19. Change the reference point to bottom left corner.
+
+It may look that we ended up having more trouble setting the atlas settings than
+if we simply enabled and disabled the layers as we needed, but, if we needed to
+do an adjustment to the map layout, we can quicly reproduce each layout.
+
+This method of iterating preset can be very useful for exporting different thematic maps
+for the same region.
